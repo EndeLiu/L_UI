@@ -1,0 +1,57 @@
+.lui-gloabl-msg-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  top: 20px;
+  align-items: center;
+  
+  
+  .lui-gloabl-msg {
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    transform: translateY(-1000px);
+    transition: transform .5s;
+    
+    .lui-gloabl-msg-icon {
+      display: flex;
+      flex: 1;
+    }
+    .lui-gloabl-msg-content {
+      display: inline-block;
+      flex: 3;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  .lui-gloabl-msg-show {
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    @keyframes slide-bottom {
+      0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+  }
+  .lui-gloabl-msg-hide {
+    animation: slide-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    @keyframes slide-up {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(-100px);
+      }
+    }
+  }
+}

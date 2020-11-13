@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import GlobalMsg from './components/GlobalMsg/GlobalMsg'
+import React, {useRef} from 'react'
 
 function App() {
+  
+  const content = 'hello world'
+  const duration = 5000
+
+  const globalMsgRef = useRef(null)
+
+  const showMsg = () => {
+    console.log(globalMsgRef)
+    globalMsgRef.current.showMsg(true)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={showMsg}></button>
+      <GlobalMsg ref={globalMsgRef} msg={content} duration={duration} />
     </div>
   );
 }

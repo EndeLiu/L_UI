@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./GlobalMsgJS.js"></script>
+  <link href="./main.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div id="target"></div>
+  <button id="trigger"></button>
+
+
+  <script>
+    const target = document.getElementById('target')
+    const trigger = document.getElementById('trigger')
+    
+    trigger.addEventListener('click', e => {
+      const s = GlobalMsgJS({
+        msg: 'Hello World JS',
+        duration: 15000
+      })
+      target.appendChild(s.dom())
+      s.methods.show()
+    })
+    
+   
+
+  </script>
+</body>
+</html>
