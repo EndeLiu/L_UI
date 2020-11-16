@@ -10,8 +10,7 @@
 //   const globalMsgRef = useRef(null)
 
 //   const showMsg = () => {
-//     console.log(globalMsgRef)
-//     globalMsgRef.current.showMsg(true)
+//     globalMsgRef.current.show(true)
 //   }
 
 //   return (

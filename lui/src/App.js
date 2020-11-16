@@ -1,23 +1,40 @@
 import './App.css';
-import GlobalMsg from './components/GlobalMsg/GlobalMsg'
+import SideMenu from './components/SideMenu/SideMenu'
 import React, {useRef} from 'react'
 
 function App() {
   
-  const content = 'hello world'
-  const duration = 5000
-
-  const globalMsgRef = useRef(null)
-
-  const showMsg = () => {
-    console.log(globalMsgRef)
-    globalMsgRef.current.showMsg(true)
-  }
+  const data = [
+    {
+      name: '1', children:[
+        {
+          name: '1-1', children:[
+            {name: '1-1-1', children:[]},
+            {name: '1-1-2', children:[]},
+            {name: '1-1-3', children:[]}
+          ]
+        },
+        {
+          name: '1-2', children:[]
+        },
+        {
+          name: '1-3', children:[]
+        },
+        {
+          name: '1-4', children:[]
+        },
+      ]
+    },
+    {
+      name: '2', children:[
+        {name: '1-4', children:[]},
+      ]
+    },
+  ]
 
   return (
     <div className="App">
-      <button onClick={showMsg}></button>
-      <GlobalMsg ref={globalMsgRef} msg={content} duration={duration} />
+      <SideMenu data={data} width={150} />
     </div>
   );
 }

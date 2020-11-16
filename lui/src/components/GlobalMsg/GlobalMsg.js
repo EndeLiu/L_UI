@@ -37,20 +37,20 @@ function GlobalMsgUI (props) {
 
 const GlobalMsg = forwardRef((props, ref) => {
   const {msg, icon, duration} = props
-  const [showThis, setShowThis] = useState(null)
+  const [show, setShow] = useState(null)
   useImperativeHandle(ref,() => ({
-      showMsg: (flag) => {
-        setShowThis(flag)
+      show: (flag) => {
+        setShow(flag)
       }
   }))
   setTimeout(() => {
-    if (showThis) {
-      setShowThis(false)
+    if (show) {
+      setShow(false)
     }
   }, duration ? duration : 1000)
   return (
     <div className='lui-gloabl-msg-container' ref={ref}>
-      <GlobalMsgUI msg={msg} show={showThis} icon={icon} />
+      <GlobalMsgUI msg={msg} show={show} icon={icon} />
     </div>
   )
 })
